@@ -51,21 +51,25 @@ Jako programista chciałbym jest określony schemat bazodanowy uwzględniający 
 
 2. Zadania organizacja:
    Zadanie nr 1.
-   Jako użytkownik chciałbym mieć możliwość wykonywania podstawowych operacji CRUD dla organizacji. Ponadto każda organizacja powinna być walidowana zgodnie z wymaganiami projektowymi.
+   Jako użytkownik chciałbym mieć możliwość wykonywania podstawowych operacji CRUD dla 
+   organizacji. Ponadto każda organizacja powinna być walidowana zgodnie z wymaganiami projektowymi.
    Pakiet organizacja, w którym znajdzie się
-   Klasa modelowa organizacja (nazwa - id, opis)
-   RestController
-   Serwis
-   Repositorium (baza danych H2 i Spring Data)
-   Operacja do zaimplementowania
-   Dodawanie
-   Odczyt
+   //Klasa modelowa organizacja (nazwa - id, opis)
+   //RestController
+   //Serwis
+   //Repositorium (baza danych H2 i Spring Data)
+   //Operacja do zaimplementowania
+   //Dodawanie
+   //Odczyt
    Edycja
-   Usuwanie
-   Walidacja
-   Swagger
+   //Usuwanie
+   //Walidacja
+   //Swagger
    Zadanie nr 2.
-   Zaimplementuj mechanizm sprawdzania unikalności nazwy organizacji. W systemie może istnieć tylko jedna organizacja o danej nazwie. W przypadku próby duplikacji rekordów użytkownikowi powinien zostać zwrócony kod błędu 400 z odpowiednią wiadomością.
+   Zaimplementuj mechanizm sprawdzania unikalności nazwy organizacji. 
+   W systemie może istnieć tylko jedna organizacja o danej nazwie. W przypadku próby duplikacji 
+   rekordów użytkownikowi powinien zostać zwrócony kod błędu 400 z odpowiednią wiadomością.
+
 
 
 Zaimplementuj mechanizm umożliwiający wyszukiwanie organizacji po konkretnym identyfikatorze.
@@ -83,6 +87,8 @@ Serwis - logika biznesowa dla sali konferencyjnej
 Repository - obsługa bazy danych
 Controller - obsługa żądań Http: get, post, delete, update
 Walidacji  - zgodnie z dokumentem pdf
+
+//localhost:8080/h2-console
 
 Zaimplementuj mechanizm sprawdzania unikalności nazwy sali konferencyjnej. W systemie może istnieć tylko jedna sala konferencyjna o danej nazwie. W przypadku próby duplikacji rekordów użytkownikowi powinien zostać zwrócony kod błędu 400 z odpowiednią wiadomością.
 
