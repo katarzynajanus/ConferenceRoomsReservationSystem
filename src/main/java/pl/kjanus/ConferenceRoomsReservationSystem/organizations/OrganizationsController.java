@@ -23,7 +23,7 @@ public class OrganizationsController {
     }
 
     @GetMapping("/{name}")
-    Organizations getByName(@PathVariable String name) {
+    Organizations findByName(@PathVariable String name) {
         return organizationsService.findByName(name);
     }
 

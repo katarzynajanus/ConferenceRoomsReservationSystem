@@ -26,12 +26,10 @@ class OrganizationsService {
 
     }
 
-
     List<Organizations> findAll(SortType sortType) {
         Sort sort = Sort.by(Sort.Direction.fromString(sortType.name()), "name");
         return organizationsRepository.findAll(sort);
     }
-
 
     Organizations findByName(String name) {
         return organizationsRepository.findById(name)
