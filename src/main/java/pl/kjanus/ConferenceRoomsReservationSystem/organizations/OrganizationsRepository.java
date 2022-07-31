@@ -8,6 +8,6 @@ import java.util.List;
 import java.util.Optional;
 
 @Repository
-public interface OrganizationsRepository extends JpaRepository<Organizations, String> {
+public interface OrganizationsRepository extends JpaRepository<Organizations, Long> {
     Optional<Organizations> findByName(String name);
 }

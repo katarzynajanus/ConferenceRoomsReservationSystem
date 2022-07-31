@@ -66,21 +66,32 @@ Jako programista chciałbym jest określony schemat bazodanowy uwzględniający 
    //Walidacja
    //Swagger
    Zadanie nr 2.
-   Zaimplementuj mechanizm sprawdzania unikalności nazwy organizacji. 
+   //Zaimplementuj mechanizm sprawdzania unikalności nazwy organizacji. 
    W systemie może istnieć tylko jedna organizacja o danej nazwie. W przypadku próby duplikacji 
    rekordów użytkownikowi powinien zostać zwrócony kod błędu 400 z odpowiednią wiadomością.
-
-
-
 //Zaimplementuj mechanizm umożliwiający wyszukiwanie organizacji po konkretnym identyfikatorze.
-
 //Jako użytkownik chciałbym mieć możliwość sortowania organizacji po nazwie zarówno w kolejności rosnącej 
 jak i malejącej.
-Zadanie nr 3.
-Jako klient chciałbym mieć testy jednostkowe i integracyjne sprawdzające poprawność zaimplementowanej 
-funkcjonalności
+   Zadanie nr 3.
+   Jako klient chciałbym mieć testy jednostkowe i integracyjne sprawdzające poprawność zaimplementowanej funkcjonalności
 
-3. Zadania Sala konferencyjna:
+Testy jednostkowe Repository
+Testy jednostkowe Service
+Testy jednostkowe Controller
+Testy integracyjne
+
+
+Zadanie nr 4.
+
+Obecnie zmiana nazwy organizacji jest niemożliwa, żeby rozwiązać ten problem wprowadź:
+Abstrakcyjne id do modelu Organizations (autogenerowane)
+Name powinno być zwykłym polem klasy z dotychczasową walidacją
+Zmodyfikuj metody serwisu tak by odwoływały się do ID
+Dodaj metodę findByName do repository w celu uzyskania istniejącego rozwiązania
+
+
+
+4. Zadania Sala konferencyjna:
 
 Zadanie nr 1.
 Jako użytkownik chciałbym mieć możliwość wykonywania podstawowych operacji CRUD dla sal konferencyjnych. Ponadto każda sala konferencyjna powinna być walidowana zgodnie z wymaganiami projektowymi.

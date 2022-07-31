@@ -19,7 +19,7 @@ class OrganizationsService {
 
 
     Organizations add(Organizations organizations) {
-        organizationsRepository.findById(organizations.getName()).ifPresent(o -> {
+        organizationsRepository.findByName(organizations.getName()).ifPresent(o -> {
             throw new IllegalArgumentException("Organization already exists!");
         });
         return organizationsRepository.save(organizations);
@@ -32,21 +32,17 @@ class OrganizationsService {
     }
 
     Organizations findByName(String name) {
-        return organizationsRepository.findById(name)
-                .orElseThrow(() -> new NoSuchElementException("No organization exists!"));
+        return organizationsRepository.findByName(name).orElseThrow(() -> new NoSuchElementException("No organization exists!"));
     }
 
     Organizations delete(String name) {
-        Organizations organizations = organizationsRepository.findByName(name)
-                .orElseThrow(() -> new NoSuchElementException(""));
-        organizationsRepository.deleteById(name);
+        Organizations organizations = organizationsRepository.findByName(name).orElseThrow(() -> new NoSuchElementException(""));
+        organizationsRepository.deleteById(organizations.getId());
         return organizations;
     }
 
     Organizations update(String name, Organizations organizations) {
-        Organizations existingOrganizations = organizationsRepository
-                .findByName(name)
-                .orElseThrow(() -> new NoSuchElementException(""));
+        Organizations existingOrganizations = organizationsRepository.findByName(name).orElseThrow(() -> new NoSuchElementException(""));
         if (organizations.getDescription() != null) {
             existingOrganizations.setDescription(organizations.getDescription());
         }
