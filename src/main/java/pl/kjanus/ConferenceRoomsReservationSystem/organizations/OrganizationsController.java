@@ -6,6 +6,7 @@ import org.springframework.validation.FieldError;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.*;
+import pl.kjanus.ConferenceRoomsReservationSystem.SortType;
 
 import java.util.HashMap;
 import java.util.List;
@@ -21,9 +22,14 @@ public class OrganizationsController {
         this.organizationsService = organizationsService;
     }
 
+    @GetMapping("/{name}")
+    Organizations findByName(@PathVariable String name) {
+        return organizationsService.findByName(name);
+    }
+
     @GetMapping
-    List<Organizations> getAll() {
-        return organizationsService.findAll();
+    List<Organizations> findAll(@RequestParam(required = false, defaultValue = "ASC") SortType sortType) {
+        return organizationsService.findAll(sortType);
     }
 
     @PostMapping
@@ -43,8 +49,7 @@ public class OrganizationsController {
     }
 
     @ExceptionHandler(MethodArgumentNotValidException.class)
-    ResponseEntity<Object> handleValidationExceptions(
-            MethodArgumentNotValidException ex) {
+    ResponseEntity<Object> handleValidationExceptions(MethodArgumentNotValidException ex) {
         Map<String, String> errors = new HashMap<>();
         ex.getBindingResult().getAllErrors().forEach((error) -> {
             String fieldName = ((FieldError) error).getField();

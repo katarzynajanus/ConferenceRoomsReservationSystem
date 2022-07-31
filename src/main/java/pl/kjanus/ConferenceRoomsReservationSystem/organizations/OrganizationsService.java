@@ -1,16 +1,11 @@
 package pl.kjanus.ConferenceRoomsReservationSystem.organizations;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
-import org.springframework.validation.FieldError;
-import org.springframework.web.bind.MethodArgumentNotValidException;
-import org.springframework.web.bind.annotation.ExceptionHandler;
+import pl.kjanus.ConferenceRoomsReservationSystem.SortType;
 
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 import java.util.NoSuchElementException;
 
 @Service
@@ -24,12 +19,21 @@ class OrganizationsService {
 
 
     Organizations add(Organizations organizations) {
+        organizationsRepository.findById(organizations.getName()).ifPresent(o -> {
+            throw new IllegalArgumentException("Organization already exists!");
+        });
         return organizationsRepository.save(organizations);
 
     }
 
-    List<Organizations> findAll() {
-        return organizationsRepository.findAll();
+    List<Organizations> findAll(SortType sortType) {
+        Sort sort = Sort.by(Sort.Direction.fromString(sortType.name()), "name");
+        return organizationsRepository.findAll(sort);
+    }
+
+    Organizations findByName(String name) {
+        return organizationsRepository.findById(name)
+                .orElseThrow(() -> new NoSuchElementException("No organization exists!"));
     }
 
     Organizations delete(String name) {
