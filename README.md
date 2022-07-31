@@ -72,11 +72,13 @@ Jako programista chciałbym jest określony schemat bazodanowy uwzględniający 
 
 
 
-Zaimplementuj mechanizm umożliwiający wyszukiwanie organizacji po konkretnym identyfikatorze.
+//Zaimplementuj mechanizm umożliwiający wyszukiwanie organizacji po konkretnym identyfikatorze.
 
-Jako użytkownik chciałbym mieć możliwość sortowania organizacji po nazwie zarówno w kolejności rosnącej jak i malejącej.
+//Jako użytkownik chciałbym mieć możliwość sortowania organizacji po nazwie zarówno w kolejności rosnącej 
+jak i malejącej.
 Zadanie nr 3.
-Jako klient chciałbym mieć testy jednostkowe i integracyjne sprawdzające poprawność zaimplementowanej funkcjonalności
+Jako klient chciałbym mieć testy jednostkowe i integracyjne sprawdzające poprawność zaimplementowanej 
+funkcjonalności
 
 3. Zadania Sala konferencyjna:
 
