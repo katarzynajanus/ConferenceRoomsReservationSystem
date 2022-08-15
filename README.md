@@ -81,26 +81,27 @@ Testy jednostkowe Controller
 Testy integracyjne
 
 
-Zadanie nr 4.
+//Zadanie nr 4.
 
-Obecnie zmiana nazwy organizacji jest niemożliwa, żeby rozwiązać ten problem wprowadź:
-Abstrakcyjne id do modelu Organizations (autogenerowane)
-Name powinno być zwykłym polem klasy z dotychczasową walidacją
-Zmodyfikuj metody serwisu tak by odwoływały się do ID
-Dodaj metodę findByName do repository w celu uzyskania istniejącego rozwiązania
+//Obecnie zmiana nazwy organizacji jest niemożliwa, żeby rozwiązać ten problem wprowadź:
+//Abstrakcyjne id do modelu Organizations (autogenerowane)
+//Name powinno być zwykłym polem klasy z dotychczasową walidacją
+//Zmodyfikuj metody serwisu tak by odwoływały się do ID
+//Dodaj metodę findByName do repository w celu uzyskania istniejącego rozwiązania
 
 
 
-4. Zadania Sala konferencyjna:
+3. Zadania Sala konferencyjna:
 
 Zadanie nr 1.
-Jako użytkownik chciałbym mieć możliwość wykonywania podstawowych operacji CRUD dla sal konferencyjnych. Ponadto każda sala konferencyjna powinna być walidowana zgodnie z wymaganiami projektowymi.
-Encja z polami, id, name, identifier, level, availability, numer_of_seats
+//Jako użytkownik chciałbym mieć możliwość wykonywania podstawowych operacji CRUD dla sal konferencyjnych. 
+Ponadto każda sala konferencyjna powinna być walidowana zgodnie z wymaganiami projektowymi.
+//Encja z polami, id, name, identifier, level, availability, numer_of_seats
 Serwis - logika biznesowa dla sali konferencyjnej
-Repository - obsługa bazy danych
+//Repository - obsługa bazy danych
 Controller - obsługa żądań Http: get, post, delete, update
 Walidacji  - zgodnie z dokumentem pdf
-
+git
 //localhost:8080/h2-console
 
 Zaimplementuj mechanizm sprawdzania unikalności nazwy sali konferencyjnej. W systemie może istnieć tylko jedna sala konferencyjna o danej nazwie. W przypadku próby duplikacji rekordów użytkownikowi powinien zostać zwrócony kod błędu 400 z odpowiednią wiadomością.
@@ -113,7 +114,7 @@ Jako użytkownik chciałbym mieć możliwość sortowania sal konferencyjnych po
 Zadanie nr 4.
 Jako klient chciałbym mieć testy jednostkowe i integracyjne sprawdzające poprawność zaimplementowanej funkcjonalności.
 
-4. Zadania Sala konferencyjna:
+4. Rezerwacja sal konferencyjnych:
    Zadanie nr 1.
 
 Jako użytkownik chciałbym mieć możliwość wykonywania podstawowych operacji CRUD dla rezerwacji sal konferencyjnych. Każda rezerwacja powinna zawierać informacje takie jak:

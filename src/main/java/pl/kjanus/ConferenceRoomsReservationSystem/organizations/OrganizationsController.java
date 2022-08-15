@@ -33,7 +33,7 @@ public class OrganizationsController {
     }
 
     @PostMapping
-    Organizations add(@Validated(value = AddOrganization.class) @RequestBody Organizations organizations) {
+    Organizations add(@Validated(value = AddOrganizations.class) @RequestBody Organizations organizations) {
         return organizationsService.add(organizations);
     }
 
@@ -44,7 +44,7 @@ public class OrganizationsController {
     }
 
     @PutMapping("/{name}")
-    Organizations update(@PathVariable String name, @Validated(value = UpdateOrganization.class) @RequestBody Organizations organizations) {
+    Organizations update(@PathVariable String name, @Validated(value = UpdateOrganizations.class) @RequestBody Organizations organizations) {
         return organizationsService.update(name, organizations);
     }
 
